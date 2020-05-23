@@ -1,0 +1,5 @@
+insert into users values (1, date('now'), 'Mahendra')
+insert into users values (2, date('now'), 'Ravindra')
+insert into users values (3, date('now'), 'Jitendra')
+insert into users values (4, date('now'), 'Suman')
+insert into users values (5, date('now'), 'Gautam')
