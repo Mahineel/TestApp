@@ -33,6 +33,13 @@ Installing
 	https://git-scm.com/downloads.
 
 Running the project
+
+	Main Spring Boot  Class File Located in 
+	com.mahendra.restfulwebservice.restfulwebservice.TestAppWebServiceApplication
+	
+	Just Right click on this file ->  Run as -> Java Application
+	
+	
 		
 	Link for swagger-ui documentation 
 
