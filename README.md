@@ -35,9 +35,7 @@ Installing
 Running the project
 
 	Main Spring Boot  Class File Located in 
-	com.mahendra.restfulwebservice.restfulwebservice.TestAppWebServiceApplication
-	
-	Just Right click on this file ->  Run as -> Java Application
+	com.mahendra.restfulwebservice.restfulwebservice.TestAppWebServiceApplication   Just Right click on this file ->  Run as -> Java Application
 	
 	
 		
