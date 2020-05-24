@@ -27,9 +27,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@Autowired
-	private com.mahendra.restful.webservice.restfulwebservice.repositories.UserRepository userRepo;
-
 	// retrieve All Users
 	// Method = GET
 	// URI = /users
@@ -42,7 +39,7 @@ public class UserController {
 
 	@GetMapping("/users/{id}")
 	public User retrieveUser(@PathVariable int id) {
-		User user = userRepo.findById(id).get();
+		User user = userService.findById(id).get();
 		if (user == null) {
 			throw new UserNotFoundException("id -  " + id);
 		}
@@ -55,7 +52,7 @@ public class UserController {
 	// argument
 	@PostMapping("/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-		User createUser = userRepo.save(user);
+		User createUser = userService.save(user);
 
 		// Return Created User URI e.g. users/6
 		// It Will return the status code of 201 created
@@ -69,7 +66,7 @@ public class UserController {
 
 	@DeleteMapping("/users/{id}")
 	public void deleteUser(@PathVariable int id) {
-		userRepo.deleteById(id);
+		userService.deleteById(id);
 		
 		
 	}

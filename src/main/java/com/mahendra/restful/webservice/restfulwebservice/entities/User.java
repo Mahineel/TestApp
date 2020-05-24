@@ -1,7 +1,5 @@
 package com.mahendra.restful.webservice.restfulwebservice.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,11 +15,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "All details about the user.")
 @Entity
-@Table(name="Users")
+@Table(name="users")
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	
@@ -32,14 +30,14 @@ public class User {
 
 	@Past 
 	@ApiModelProperty(notes = "Birth date should be in the past.")
-	@Column(name="birth_date ")
-	private Date birthDate;
+	@Column(name="email_id ")
+	private String emailId;
 
-	public User(Integer id, String name, Date birthDate) {
+	public User(Integer id, String name, String emailId) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.birthDate = birthDate;
+		this.emailId = emailId;
 	}
 	
 	protected User() {
@@ -62,17 +60,19 @@ public class User {
 		this.name = name;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
+	
+
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", birthDate=" + birthDate + "]";
+		return "User [id=" + id + ", name=" + name + ", emailId=" + emailId + "]";
 	}
 
 }
